@@ -22,6 +22,11 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 })
 
 
+//handle root path
+
+app.get('/',(req,res)=>{
+    res.send('Welcome to the backend API')
+})
 //api routes
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes)
